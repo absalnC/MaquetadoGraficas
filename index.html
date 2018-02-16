@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html >
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<title>Star Wars People App</title>
+</head>
+<body ng-app="swapp"  >
+	<div ng-controller="swcontroller" id="cont">
+		<div id="encabezado">
+			<div id="blackcover">
+			<div ><div id="grande">SAMPLE</div>
+			<div id="notangrande">--Lorem ipsum dolor sit amet--</div></div>
+			</div>
+		</div>
+		<div id="menu">
+			<span ng-repeat="item in menuitems track by $index" class={{"nth"+$index}}>
+				{{item}}
+			<span>
+		</div>
+		<div id="cuerpo">
+			<!-- Hacer directiva? -->
+			<div class="morbi">Morbi imperdiet, sapien a consequenciat sollicitudin</div>
+			<div id="gauges">
+				<div class="gauge">
+					<img src="./assets/gauge.png">
+				</div>
+				<div class="gauge">
+					<img src="./assets/gauge.png">
+				</div>
+				<div class="gauge">
+					<img src="./assets/gauge.png">
+				</div>
+				<div class="gauge">
+					<img src="./assets/gauge.png">
+				</div>
+			</div>
+			<div id="graficas">
+				<div>
+					<img src="./assets/stackedbars.png">
+				</div>
+				<div>
+					<img src="./assets/box-plot.png">
+				</div>
+			</div>
+			
+			<div class="morbi">Morbi imperdiet, sapien a consequenciat sollicitudin</div>
+		
+			<div id="search">
+				<i class="fa fa-search"></i><input type="text"  ng-model="search.name" placeholder="Search"/><span id="ex" ng-click ="search.name=''">X</span>
+			</div>
+			
+
+			<div id="table">
+				<div class="row">
+					<span class="gender bottom">Gender</span>
+					<span class="name bottom" >Name</span>
+					<span class="height bottom">Height</span>
+					<span class="mass bottom">Mass</span>
+				</div>
+				<div  class="row data" ng-repeat="people in data | filter:search">
+					<div class="gender">{{people.gender}}</div>
+					<div class="name">{{people.name}}</div>
+					<div class="height">{{people.height}}</div>
+					<div class="mass">{{people.mass}}</div>
+				</div>
+			</div>
+		</div>
+		
+
+	</div>
+	<script type="text/javascript" src="./script.js"></script>
+</body>
+</html>
